@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with default config
 export const api = axios.create({
-  baseURL: 'http://localhost:5000', // Backend URL
+  baseURL: process.env.NODE_ENV === 'production' ? 'https://your-domain.com' : 'http://localhost:5000', // Backend URL
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
